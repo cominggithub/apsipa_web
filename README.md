@@ -1,6 +1,6 @@
 # Server
   - Lab IP: 192.168.1.60 (internal private IP address)
-  - Public: URL http://www.apsipa-taiwan-chapter.org
+  - Public URL: http://www.apsipa-taiwan-chapter.org
   - user name: msoc
 
 ssh login command
