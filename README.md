@@ -1,14 +1,24 @@
-# deploy
-nd1, linms/apsipa_web, nginx
-http://www.apsipa-taiwan-chapter.org
+# Server
+  - Lab IP: 192.168.1.60 (internal private IP address)
+  - Public: URL http://www.apsipa-taiwan-chapter.org
+  - user name: msoc
 
-# ncku server nd1
-http://192.168.1.10/
+ssh login command
+```
+ssh msoc@140.116.216.124 -p 6200
+```
 
-# reference
-https://themes.3rdwavemedia.com/demo/devconf/
+# nginx configuration
 
+## root folder
+The web page of the APSIPA is placed in `/home/msoc/linms/project/apsipa_web/web`
 
+## site-available
+the APSIPA nginx config file is located in `/etc/nginx/sites-available/apsipa` 
 
-# sync with nd1
-rsync -a --delete  -e "ssh -p 1200" /home/coming/project/ncku/app/apsipa_web msoc@140.116.216.124:/home/msoc/linms/
+## site-enabled
+to start the APSIPA web, link the APSIPA nginx config in `sites-available/apsipa` to `site-enabled/apsipa`
+```bash
+sudo ln -s /etc/nginx/sites-available/apsipa /etc/nginx/sites-enabled/apsipa
+```
+
